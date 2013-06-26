@@ -2,22 +2,9 @@
 
 /**
 * @file
-* Drupal France Meetyp main module :
-* - Administration form for RSS feed definition.
+* Drupal France Meetyp module.
 */
 
-/**
- * Implements hook_menu().
- */
-function drupal_france_meetup_menu() {
-  $items['admin/structure/drupal-france-meetup'] = array(
-    'description' => 'Change the settigns of Drupal France Meetup module',
-    'route_name' => 'drupal_france_meetup_settings',
-    'title' => 'Drupal France Meetup settings',
-  );
-
-  return $items;
-}
 
 /**
  * Implements hook_permission().
@@ -31,4 +18,32 @@ function drupal_france_meetup_permission() {
   );
 
   return $permissions;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function drupal_france_meetup_menu() {
+  $items['admin/config/services/drupal-france-meetup'] = array(
+    'description' => 'Change the settigns of Drupal France Meetup module',
+    'route_name' => 'drupal_france_meetup_settings',
+    'title' => 'Drupal France Meetup settings',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function drupal_france_meetup_theme() {
+  return array(
+    'drupal_france_meetup_block' => array(
+      'template' => 'drupal_france_meetup_block',
+      'variables' => array(
+        'entries' => NULL,
+        'title' => NULL,
+      ),
+    ),
+  );
 }
