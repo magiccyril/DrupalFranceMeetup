@@ -1,0 +1,7 @@
+name: Drupal France Meetup
+type: module
+description: 'Display the next Drupal France Meetup.'
+package: Custom
+version: 1.0
+core: 8.x
+configure: admin/structure/drupal-france-meetup

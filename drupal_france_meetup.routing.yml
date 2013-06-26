@@ -1,0 +1,6 @@
+drupal_france_meetup_settings:
+  pattern: '/admin/structure/drupal-france-meetup'
+  defaults:
+    _form: 'Drupal\drupal_france_meetup\Form\SettingsForm'
+  requirements:
+    _permission: 'administer drupal france meetup'

@@ -1,0 +1,34 @@
+<?php
+
+/**
+* @file
+* Drupal France Meetyp main module :
+* - Administration form for RSS feed definition.
+*/
+
+/**
+ * Implements hook_menu().
+ */
+function drupal_france_meetup_menu() {
+  $items['admin/structure/drupal-france-meetup'] = array(
+    'description' => 'Change the settigns of Drupal France Meetup module',
+    'route_name' => 'drupal_france_meetup_settings',
+    'title' => 'Drupal France Meetup settings',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function drupal_france_meetup_permission() {
+  $permissions = array(
+    'administer drupal france meetup' => array(
+      'title' => t('Administer Drupal France Meetup module'),
+      'description' => t('Change the settings for Drupal France Meetup module.'),
+    ),
+  );
+
+  return $permissions;
+}
